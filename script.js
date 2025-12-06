@@ -1,10 +1,8 @@
-// script.js - mobile nav toggle + small helpers
+// script.js - mobile nav toggle + resize watcher
 (function(){
   'use strict';
   const $ = sel => document.querySelector(sel);
-  const $$ = sel => Array.from(document.querySelectorAll(sel));
 
-  // MOBILE NAV TOGGLE
   function initMobileNav(){
     const btn = $('#navToggle');
     const mobile = $('#mobileNav');
@@ -13,10 +11,8 @@
       const isOpen = mobile.style.display === 'block';
       mobile.style.display = isOpen ? 'none' : 'block';
       btn.setAttribute('aria-expanded', String(!isOpen));
-      // lock scroll when open
       document.body.style.overflow = !isOpen ? 'hidden' : '';
     });
-    // close on link click (mobile)
     mobile.addEventListener('click', (e)=>{
       if(e.target.tagName === 'A'){
         mobile.style.display = 'none';
@@ -24,7 +20,6 @@
         document.body.style.overflow = '';
       }
     });
-    // close on escape
     document.addEventListener('keydown', (e)=>{
       if(e.key === 'Escape') {
         mobile.style.display = 'none';
@@ -34,7 +29,6 @@
     });
   }
 
-  // accessibility: hide mobile nav if screen resizes to desktop
   function initResizeWatcher(){
     let lastW = window.innerWidth;
     window.addEventListener('resize', ()=>{
@@ -50,7 +44,6 @@
     });
   }
 
-  // run on DOM ready
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', ()=>{ initMobileNav(); initResizeWatcher(); });
   } else {
