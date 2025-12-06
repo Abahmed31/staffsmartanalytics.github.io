@@ -1,262 +1,135 @@
-/* ----------------------------------------------------------
-   Global Reset & Typography
----------------------------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* styles.css — Updated: solid dark navbar, mobile menu, hero contrast, stats commented out */
+
+/* ---------- Reset & Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f6f9ff 0%, #ffffff 100%);
+  color:#0f1724;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
 }
 
-body {
-  font-family: "Inter", Arial, sans-serif;
-  background: #f5f7fa;
-  color: #1c1f26;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+/* Container */
+.container{max-width:1180px;margin:0 auto;padding:20px}
+
+/* ---------- Header / Nav (SOLID DARK) ---------- */
+.site-header{
+  position:fixed; top:0; left:0; right:0;
+  z-index:9999;
+  background:#0b0e19; /* solid dark */
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.header-inner{max-width:1180px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+/* Brand */
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{height:44px;width:auto;display:block;border-radius:8px;background:transparent}
+.brand-title{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-weight:800;color:#e5dbff;font-size:16px}
+.brand-tag{font-size:12px;color:#9aa7c7;margin-top:2px}
+
+/* Primary nav */
+.primary-nav{display:flex;align-items:center;gap:18px}
+.primary-nav a{color:#e9eefc;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .18s}
+.primary-nav a:hover{color:#7df9ff;text-shadow:0 0 6px rgba(125,249,255,0.08);transform:translateY(-1px)}
+
+/* Remove visited link styling */
+a:link, a:visited { color: inherit; }
+
+/* CTA in nav */
+.nav-cta{
+  background:linear-gradient(135deg,#6366F1,#8B5CF6);
+  color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;box-shadow:0 8px 26px rgba(99,102,241,0.12)
 }
 
-img {
-  max-width: 100%;
-}
+/* Mobile toggle (visible on small screens) */
+.nav-toggle{display:none;background:transparent;border:0;color:#fff;padding:8px;border-radius:8px;cursor:pointer}
+.hamburger{width:22px;height:2px;background:currentColor;border-radius:2px;position:relative;display:inline-block}
+.hamburger::before,.hamburger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:currentColor;border-radius:2px}
+.hamburger::before{top:-6px}
+.hamburger::after{top:6px}
 
-/* ----------------------------------------------------------
-   HEADER (Fix #1 implemented here)
----------------------------------------------------------- */
+/* Mobile nav (hidden by default) */
+.mobile-nav{display:none;position:absolute;top:68px;left:0;right:0;background:#0b0e19;border-top:1px solid rgba(255,255,255,0.02);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+.mobile-nav a{display:block;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.02);color:#e9eefc}
 
-.site-header {
-  background: #0b0e19; /* deep navy / high contrast */
-  padding: 20px 40px;
-  width: 100%;
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo {
-  height: 42px;
-}
-
-.site-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff !important; /* fixed */
-}
-
-.site-subtitle {
-  font-size: 12px;
-  margin-top: -4px;
-  color: #a4b1c9 !important; /* softer but visible */
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav-link {
-  font-size: 15px;
-  color: #ffffff !important;
-  font-weight: 500;
-  transition: 0.25s ease;
-}
-
-.nav-link:hover {
-  color: #7df9ff !important; /* cyan glow hover */
-  text-shadow: 0 0 6px rgba(125,249,255,0.7);
-}
-
-/* Contact button */
-.contact-btn {
-  padding: 10px 18px;
-  background: #7f00ff;
-  background: linear-gradient(135deg, #8f2eff, #5f0fff);
-  color: white;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.contact-btn:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
-}
-
-/* ----------------------------------------------------------
-   HERO SECTION
----------------------------------------------------------- */
-
-.hero {
-  padding: 160px 40px 120px;
-  background: linear-gradient(
-    to bottom,
-    #0b0e19 0%,
-    #1a2033 40%,
-    #e8ecf4 100%
-  );
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-}
-
-.hero h1 {
-  font-size: 46px;
-  font-weight: 800;
-  line-height: 1.15;
-}
-
-.hero-tag {
-  background: rgba(255,255,255,0.1);
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-size: 13px;
-  display: inline-block;
-  margin-bottom: 18px;
-}
-
-.hero p {
-  max-width: 560px;
-  color: #d8deea;
-}
-
-.hero-buttons {
-  margin-top: 28px;
-  display: flex;
-  gap: 16px;
-}
-
-.btn-primary {
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #7f00ff, #5f0fff);
-  color: white;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  padding: 12px 20px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 10px;
-  font-weight: 600;
-  color: #ffffff;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.25);
-  transition: 0.3s;
-}
-
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
-}
-
-/* ----------------------------------------------------------
-   METRICS SECTION (fixed contrast)
----------------------------------------------------------- */
-
-.metrics {
-  display: flex;
-  gap: 20px;
-  padding: 30px 40px;
-}
-
-.stats-card {
-  flex: 1;
-  background: rgba(20, 24, 36, 0.65); 
-  color: #ffffff;
-  backdrop-filter: blur(12px);
-  padding: 24px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.stats-card h3 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 6px;
+/* ---------- Hero (top area) ---------- */
+/* Keep the same overall layout but ensure contrast is strong for all content */
+.hero{
+  padding:120px 20px 48px;
+  background: linear-gradient(180deg,#0b0e19 0%, #1a2033 42%, #e8ecf4 100%);
   color: #ffffff;
 }
 
-.stats-card p {
-  font-size: 14px;
-  color: #cfd6e6;
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+.eyebrow{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.06);color:#cfe5ff;border-radius:999px;font-weight:700;font-size:13px}
+.hero-title{font-size:34px;margin:14px 0 8px;line-height:1.06;color:#fff}
+.hero-lead{color:rgba(255,255,255,0.88);margin:0 0 18px;max-width:56ch}
+
+/* CTA buttons */
+.btn{padding:12px 18px;border-radius:10px;border:0;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:linear-gradient(90deg,#6366F1,#8B5CF6);color:white;box-shadow:0 8px 26px rgba(99,102,241,0.12)}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.95)}
+
+/* Right card */
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(11,37,69,0.08);color:#0b2545}
+.card .small-muted{color:#6b7280}
+.card .card-title{font-size:18px;font-weight:800;color:#0b2545}
+.time-tag{font-size:12px;color:#6b7280;background:#f6f8ff;padding:6px 10px;border-radius:8px}
+
+/* Chart svg placeholder */
+.svg-chart{width:100%;height:140px;border-radius:10px;background:linear-gradient(180deg,#fafbff,#eef2ff);display:block}
+
+/* ---------- Features / panels (light area) ---------- */
+.panel{background:var(--panel-bg, #f6f9fb);padding:48px 20px;border-top-left-radius:32px;border-top-right-radius:32px;margin-top:-24px;color:#0f1724}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.feature{background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 20px rgba(11,37,69,0.06)}
+.feature h3{color:#0b2545;margin-bottom:8px}
+
+/* CTA block */
+.cta-block{margin-top:22px;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#f6f9ff);display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 8px 20px rgba(11,37,69,0.05)}
+.muted{color:#6b7280}
+
+/* ---------- Metrics (HIDDEN / COMMENTED) ---------- */
+/*
+.metrics{display:flex;gap:12px;margin-top:18px}
+.metric{flex:1;padding:16px;background:rgba(255,255,255,0.06);border-radius:10px;color:rgba(255,255,255,0.95)}
+.metric strong{display:block;font-size:20px}
+*/
+
+/* ---------- Forms ---------- */
+.form-card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(11,37,69,0.06)}
+input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2;background:transparent;font-size:15px;color:#0b2545}
+textarea{min-height:120px}
+
+/* footer */
+footer{background:#0b0e19;color:#cfd6e6;padding:36px 20px;margin-top:34px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1180px;margin:0 auto}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:18px}
+  .cards-grid{grid-template-columns:1fr 1fr}
+  .primary-nav{display:none}
+  .nav-toggle{display:block}
+  .brand-name{font-size:15px}
+  .brand-logo{height:40px}
+  .card{padding:16px}
 }
 
-/* ----------------------------------------------------------
-   SECTION STYLING
----------------------------------------------------------- */
-
-.section {
-  padding: 90px 40px;
-}
-
-.section h2 {
-  font-size: 34px;
-  margin-bottom: 25px;
-  color: #0b0e19;
-}
-
-.section p {
-  max-width: 700px;
-  color: #4a4f5a;
-  margin-bottom: 24px;
-}
-
-/* ----------------------------------------------------------
-   FOOTER
----------------------------------------------------------- */
-
-footer {
-  background: #0b0e19;
-  color: #ccd3e0;
-  padding: 40px;
-  text-align: center;
-  margin-top: 50px;
-}
-
-footer p {
-  color: #8f9bb0;
-  font-size: 14px;
-}
-
-/* ----------------------------------------------------------
-   RESPONSIVE
----------------------------------------------------------- */
-
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    display: none; /* Mobile menu omitted for now */
-  }
-
-  .metrics {
-    flex-direction: column;
-  }
+@media (max-width:720px){
+  .cards-grid{grid-template-columns:1fr}
+  .cta-block{flex-direction:column;align-items:flex-start}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .mobile-nav{display:none} /* toggled by JS */
 }
