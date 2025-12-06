@@ -1,131 +1,48 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Why Us — StaffSmart Analytics</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-
-<body class="page-root">
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Why Us — Staff Smart Analytics</title>
+<link rel="stylesheet" href="styles.css" />
+<script defer src="script.js"></script>
+</head><body>
 
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="logo.png" class="brand-logo">
-      <div class="brand-title"><span class="brand-name">StaffSmart</span><span class="brand-tag">Analytics</span></div>
-    </div>
-
+  <div class="header-inner">
+    <div class="brand"><img src="logo.png" alt="Staff Smart Analytics logo" class="brand-logo" /><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag">Analytics</div></div></div>
     <nav class="primary-nav">
       <a href="index.html">Home</a>
-      <a href="about.html" class="nav-link-active">Why Us</a>
+      <a href="about.html" class="nav-link">Why Us</a>
       <a href="services.html">Solutions</a>
       <a href="pricing.html">Pricing</a>
       <a href="security.html">Data Safety</a>
       <a href="contact.html" class="nav-cta">Contact</a>
     </nav>
-
     <button id="navToggle" class="nav-toggle"><span class="hamburger"></span></button>
   </div>
-
-  <div id="mobileNav" class="mobile-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">Why Us</a>
-    <a href="services.html">Solutions</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="security.html">Data Safety</a>
-    <a href="contact.html">Contact</a>
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none">
+    <a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a>
   </div>
 </header>
 
-<main class="fade-up">
+<main style="padding-top:110px">
+  <section class="container">
+    <h1>Why organizations trust us</h1>
+    <p class="muted">We deliver measurable operational improvements with minimal data requirements and strong security controls.</p>
 
-<section class="hero">
-  <div class="container narrow">
-    <h1 class="hero-title">Why Organizations Trust Us</h1>
-    <p class="hero-lead">Workforce analytics designed for clarity, accuracy, and measurable impact.</p>
-  </div>
-</section>
-
-<section class="panel">
-  <div class="container">
-    <h2>What Makes Us Different</h2>
-
-    <div class="cards-grid">
-
-      <article class="feature">
-        <h3>Precision Analytics</h3>
-        <p class="muted">
-          Our models analyze staffing at a deeper level—identifying root-cause scheduling issues, inefficiencies,
-          demand mismatches, and hidden overtime drivers.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>Industry-Agnostic Approach</h3>
-        <p class="muted">
-          Whether you manage clinics, retail locations, logistics hubs, emergency services,
-          or large manufacturing teams, our framework adapts to your operational structure.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>Actionable, Not Theoretical</h3>
-        <p class="muted">
-          Every recommendation is designed to be implemented in the real world — with measurable outcomes
-          and estimated financial benefits.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>Low Lift for Your Team</h3>
-        <p class="muted">
-          We require only minimal, non-PII operational data. No complicated onboarding,
-          software installations, or heavy integrations.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>Future-Focused Forecasting</h3>
-        <p class="muted">
-          Our 30/90/180-day predictions help leaders plan ahead, build stable schedules, and avoid crisis management.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>Security-First Design</h3>
-        <p class="muted">
-          Zero PII required. Encrypted transfers. Secure processing. Strict retention policies.
-          Your data stays protected throughout the workflow.
-        </p>
-      </article>
-
+    <div class="cards-grid" style="margin-top:18px">
+      <div class="feature card"><h3>Precision Analytics</h3><p class="muted">Root-cause focus and prioritized actions that can be implemented quickly.</p></div>
+      <div class="feature card"><h3>Industry-Agnostic</h3><p class="muted">Works across healthcare, retail, logistics, public safety, manufacturing, and more.</p></div>
+      <div class="feature card"><h3>Actionable Guidance</h3><p class="muted">Clear next steps with owners and timelines — not just observations.</p></div>
+      <div class="feature card"><h3>Low Lift</h3><p class="muted">Minimal, anonymized data required — no PII, no heavy integrations by default.</p></div>
+      <div class="feature card"><h3>Security-First</h3><p class="muted">Encrypted transfers, strict retention and deletion policies, and controlled access.</p></div>
+      <div class="feature card"><h3>Future Roadmap</h3><p class="muted">We can extend to delivery automation when you're ready (implemented later on request).</p></div>
     </div>
 
-    <div style="text-align:center;margin-top:30px;">
-      <a href="contact.html" class="btn btn-primary">Start With a Free Analysis</a>
-    </div>
-
-  </div>
-</section>
-
+    <div style="text-align:center;margin-top:24px"><a href="contact.html" class="btn btn-primary">Start with a free analysis</a></div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="brand-compact">
-      <img src="logo.png" class="footer-logo">
-      <div class="brand-name">StaffSmart Analytics</div>
-    </div>
-    <div class="footer-right">
-      <a href="privacy.html">Privacy</a>
-      <div class="muted small">© <span id="yrA"></span> StaffSmart Analytics</div>
-    </div>
-  </div>
-</footer>
-
-<script>document.getElementById("yrA").textContent = new Date().getFullYear();</script>
-
-</body>
-</html>
+<footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo.png" class="footer-logo" alt="logo" style="height:36px"><div style="font-weight:700;color:#e5dbff">StaffSmart Analytics</div></div><div style="text-align:right;color:#cfd6e6">© <span id="yrA2"></span></div></div></footer>
+<script>document.getElementById('yrA2').textContent=new Date().getFullYear();</script>
+</body></html>
