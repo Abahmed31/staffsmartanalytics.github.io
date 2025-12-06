@@ -1,95 +1,30 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services — Staff Smart Analytics</title>
-  <meta name="description" content="Services: overtime optimization, burnout prevention, forecasting and reporting." />
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <div class="brand">
-      <img src="logo.png" alt="Staff Smart Analytics logo" class="brand-logo" />
-      <div class="brand-title">
-        <div class="brand-name">StaffSmart</div>
-        <div class="brand-tag">Analytics</div>
-      </div>
-    </div>
-
-    <nav class="primary-nav" role="navigation" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">Why Us</a>
-      <a href="services.html" class="nav-link">Solutions</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="security.html">Data Safety</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
-    </nav>
-
-    <button id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="hamburger"></span></button>
-  </div>
-
-  <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none">
-    <a href="index.html">Home</a>
-    <a href="about.html">Why Us</a>
-    <a href="services.html">Solutions</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="security.html">Data Safety</a>
-    <a href="contact.html">Contact</a>
-  </div>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Solutions — StaffSmart Analytics</title>
+<link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script>
+</head><body>
+<header class="site-header"><div class="header-inner"><div class="brand"><img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag">Analytics</div></div></div><nav class="primary-nav"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html" class="nav-link">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html" class="nav-cta">Contact</a></nav><button id="navToggle" class="nav-toggle" aria-label="Open menu"><span class="hamburger"></span></button></div>
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a></div>
 </header>
 
-<main class="panel" style="padding-top:100px">
-  <div class="container">
-    <h1>Services</h1>
-    <p class="muted">We deliver prioritized, actionable recommendations to reduce labor costs and improve workforce resilience.</p>
+<main style="padding-top:110px">
+  <section class="container">
+    <h1>Solutions</h1>
+    <p class="muted">Detailed service offerings to reduce overtime, improve coverage, and support staff wellbeing.</p>
 
     <div class="cards-grid" style="margin-top:18px">
-      <div class="feature card">
-        <h3>Overtime Reduction</h3>
-        <p class="muted">Root-cause analysis, schedule rule changes, and prioritized implementation steps.</p>
-      </div>
-      <div class="feature card">
-        <h3>Burnout & Risk Detection</h3>
-        <p class="muted">Identify high-risk patterns such as consecutive shifts, short recoveries, and workload imbalances.</p>
-      </div>
-      <div class="feature card">
-        <h3>Forecasting (30/90/180)</h3>
-        <p class="muted">Short-, mid-, and long-term forecasts to inform hiring, training, and scheduling.</p>
-      </div>
-      <div class="feature card">
-        <h3>Cost-Efficiency Modeling</h3>
-        <p class="muted">Scenario analysis comparing hiring, overtime, and agency use with ROI estimates.</p>
-      </div>
-      <div class="feature card">
-        <h3>Dashboards & Reporting</h3>
-        <p class="muted">Executive summaries and scheduler sheets — delivered in PDF or spreadsheet format.</p>
-      </div>
-      <div class="feature card">
-        <h3>Implementation & Training</h3>
-        <p class="muted">Playbooks, remote training, and monitoring to ensure sustained change.</p>
-      </div>
+      <div class="feature"><h3>Overtime Analysis</h3><p class="muted">We identify scheduling patterns that generate overtime and provide prioritized fixes.</p></div>
+      <div class="feature"><h3>Burnout Risk Detection</h3><p class="muted">Analyze recovery time, consecutive shifts, and workload balance.</p></div>
+      <div class="feature"><h3>Forecasting</h3><p class="muted">30 / 90 / 180-day forecasts with confidence ranges and staffing recommendations.</p></div>
+      <div class="feature"><h3>Cost Modeling</h3><p class="muted">Scenario comparisons: overtime vs. hiring vs. agency usage to inform decisions.</p></div>
+      <div class="feature"><h3>Reporting</h3><p class="muted">Clear one-page action plans, executive summaries, and scheduler-ready exports.</p></div>
+      <div class="feature"><h3>Training & Implementation</h3><p class="muted">Playbooks and remote coaching to help your team adopt recommended changes.</p></div>
     </div>
 
-    <div style="text-align:center;margin-top:28px">
-      <a href="contact.html" class="btn btn-primary">Request a pilot</a>
-    </div>
-  </div>
+    <div style="text-align:center;margin-top:20px"><a href="contact.html" class="btn btn-primary">Request a pilot</a></div>
+  </section>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div style="display:flex;align-items:center;gap:12px">
-      <img src="logo.png" class="footer-logo" alt="Staff Smart Analytics" style="height:36px" />
-      <div style="font-weight:700;color:#e5dbff">StaffSmart Analytics</div>
-    </div>
-    <div style="text-align:right;color:#cfd6e6">© <span id="yrSvc"></span></div>
-  </div>
-</footer>
-
-<script>document.getElementById('yrSvc').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+<footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700;color:#e5dbff">StaffSmart Analytics</div></div><div style="color:#cfd6e6">© <span id="yrS"></span></div></div></footer>
+<script>document.getElementById('yrS').textContent=new Date().getFullYear();</script>
+</body></html>
