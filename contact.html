@@ -1,69 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Staff Smart Analytics</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Contact — StaffSmart Analytics</title><link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script></head><body>
+<header class="navbar"><div class="navbar-inner"><div class="brand-left"><img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag muted">Analytics</div></div></div><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html" class="active nav-cta">Contact</a></nav><div style="display:flex;align-items:center;gap:10px"><button id="themeToggle" class="theme-toggle" aria-pressed="false"><span class="icon"></span></button><button id="navToggle" class="nav-toggle" aria-expanded="false"><span class="hamburger"></span></button></div></div></header>
 
-<body>
+<div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a></div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="navbar-left">
-        <img src="logo-new.png" alt="Logo" style="height:44px;">
-        <a href="index.html" class="nav-links">Home</a>
-        <a href="about.html" class="nav-links">Why Us</a>
-        <a href="services.html" class="nav-links">Solutions</a>
-        <a href="pricing.html" class="nav-links">Pricing</a>
-        <a href="security.html" class="nav-links">Data Safety</a>
-    </div>
+<main>
+  <section class="panel" style="padding-top:24px">
+    <div class="container">
+      <h1>Contact & Request a Free Analysis</h1>
+      <p class="muted">Fill the secure form below. Do not submit names, SSNs, medical or other PII.</p>
 
-    <a class="contact-btn" href="contact.html">Contact</a>
-</div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;margin-top:12px">
+        <div class="form-card card">
+          <form id="leadForm" action="https://formspree.io/f/xvgeqdyv" method="POST" autocomplete="on">
+            <input type="hidden" name="_next" value="thank-you.html" />
+            <input type="hidden" name="_subject" value="New inquiry — StaffSmart Analytics" />
+            <div style="display:none;visibility:hidden"><label>Leave blank</label><input name="website" type="text" tabindex="-1" autocomplete="off" /></div>
 
-<section>
-    <h1>Contact & Request a Free Analysis</h1>
-    <p style="max-width:600px;margin-top:10px;color:#555;">
-        Fill the secure form below — do not include employee names, SSNs, DOB, or medical data.
-    </p>
+            <label for="company">Organization</label><input id="company" name="company" required placeholder="Your organization" maxlength="100" />
+            <label for="contactname">Contact name</label><input id="contactname" name="contactname" required placeholder="Full name" maxlength="80" />
+            <label for="email">Business email</label><input id="email" name="email" type="email" required placeholder="you@company.com" maxlength="100" />
+            <label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" maxlength="30" />
+            <label for="message">Brief description</label><textarea id="message" name="message" maxlength="2000" placeholder="Shift schedules, staff counts, reporting needs..."></textarea>
 
-    <form action="https://formspree.io/f/xvgeqdyv" method="POST">
+            <div class="checkbox-row"><input id="no_pii_confirm" name="no_pii_confirm" type="checkbox" required /><label for="no_pii_confirm">I confirm I will not submit PII (names, SSNs, DOB, medical data).</label></div>
 
-        <label>Organization</label>
-        <input type="text" name="company" required placeholder="Your organization">
+            <div style="display:flex;gap:10px;margin-top:12px"><button class="nav-cta" type="submit">Submit inquiry</button><a class="btn btn-outline" href="mailto:info@staffsmartanalytics.com">Email us</a></div>
 
-        <label>Contact Name</label>
-        <input type="text" name="contactname" required placeholder="Full name">
-
-        <label>Business Email</label>
-        <input type="email" name="email" required placeholder="you@company.com">
-
-        <label>Phone (optional)</label>
-        <input type="tel" name="phone" placeholder="(555) 555-5555">
-
-        <label>Description</label>
-        <textarea name="message" placeholder="Shift schedules, staff counts, reporting needs..."></textarea>
-
-        <!-- FIXED CHECKBOX SECTION -->
-        <div class="checkbox-row">
-            <input type="checkbox" id="piiCheck" required>
-            <label for="piiCheck">
-                I confirm I will NOT submit any employee PII (names, SSNs, DOB, medical info).
-            </label>
+            <p class="muted small" style="margin-top:8px">Form submissions are transmitted via Formspree (HTTPS). We retain only business contact details needed to respond.</p>
+          </form>
         </div>
 
-        <button class="contact-btn" style="margin-top:20px;">Submit</button>
-    </form>
-</section>
+        <aside class="card">
+          <h3>Quick resources</h3>
+          <p class="muted">Request a demo, sample report, or discuss integrations when you submit the form.</p>
+          <p class="muted"><strong>Email:</strong> <a href="mailto:info@staffsmartanalytics.com">info@staffsmartanalytics.com</a></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
 
-<footer style="margin-top:40px;padding:20px;text-align:center;color:#555;">
-    © <span id="year"></span> Staff Smart Analytics
-</footer>
-
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+<footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700;color:var(--accent-purple)">StaffSmart Analytics</div></div><div style="color:var(--muted)">© <span id="yrContact"></span></div></div></footer>
+<script>document.getElementById('yrContact').textContent=new Date().getFullYear();</script>
+</body></html>
