@@ -3,306 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>StaffSmart Analytics — Workforce Optimization & Staffing Insights</title>
-  <meta name="description" content="StaffSmart Analytics: data-driven workforce optimization to reduce overtime and improve staffing across industries." />
+  <title>StaffSmart Analytics — Workforce Optimization & Forecasting</title>
+  <meta name="description" content="StaffSmart Analytics: AI-assisted staffing analysis, forecasting (30/90/180 days), overtime optimization, burnout prevention, and custom dashboards across industries." />
 
-  <!-- Security meta (client-side) -->
+  <!-- Security & privacy (client-side) -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="index,follow" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://formspree.io; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self';">
 
-  <!-- Content Security Policy (meta form). GitHub Pages cannot set server headers; meta helps browsers enforce CSP. -->
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; connect-src 'self' https://formspree.io; img-src 'self' data: https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://cdn.tailwindcss.com;">
+  <!-- Stylesheet (external file - coming next) -->
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Inline SVG favicon (teal/blue) -->
-  <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230b2545'/%3E%3Cpath d='M22 64 L40 44 L56 56 L78 30' fill='none' stroke='%230fa3a3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- favicon (inline SVG data url) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231C2340'/%3E%3Cpath d='M22 64 L40 44 L56 56 L78 30' fill='none' stroke='%238080FF' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
-  <!-- Tailwind for fast, high-quality styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    /* Small custom styles and transitions */
-    :root{
-      --navy:#0b2545;
-      --teal:#0fa3a3;
-      --muted:#6b7280;
-    }
-    .logo-img{max-height:48px;width:auto;display:block}
-    .focus-ring:focus{outline:3px solid rgba(11,37,69,0.12);outline-offset:3px}
-    .fade-in { animation: fadeIn .6s ease both; }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(6px)} to {opacity:1; transform:none} }
-  </style>
+  <!-- main script (deferred) -->
+  <script defer src="script.js"></script>
 </head>
-<body class="antialiased bg-gradient-to-b from-white to-slate-50 text-slate-800">
+<body class="page-root">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center gap-3">
-          <!-- exact filename: logo.png -->
-          <img src="logo.png" alt="StaffSmart Analytics" class="logo-img" />
-          <span class="font-extrabold text-lg text-[var(--navy)]">StaffSmart Analytics</span>
+  <!-- SITE WRAPPER -->
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="logo.png" alt="StaffSmart Analytics logo" class="brand-logo" />
+          <div class="brand-title">
+            <span class="brand-name">StaffSmart</span>
+            <span class="brand-tag">Analytics</span>
+          </div>
         </div>
 
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium" aria-label="Primary">
-          <a href="#home" class="text-slate-700 hover:text-[var(--navy)]">Home</a>
-          <a href="#services" class="text-slate-700 hover:text-[var(--navy)]">Services</a>
-          <a href="#pricing" class="text-slate-700 hover:text-[var(--navy)]">Pricing</a>
-          <a href="#security" class="text-slate-700 hover:text-[var(--navy)]">Security</a>
-          <a href="#contact" class="text-slate-700 hover:text-[var(--navy)]">Contact</a>
+        <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="security.html" class="nav-link">Data Safety</a>
+          <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
 
-        <!-- mobile menu button -->
-        <div class="md:hidden">
-          <button id="menuBtn" aria-label="Open menu" class="p-2 rounded-md focus-ring">
-            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-            </svg>
-          </button>
-        </div>
+        <button id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
       </div>
-    </div>
 
-    <!-- mobile nav -->
-    <div id="mobilePanel" class="md:hidden hidden border-t border-slate-100 bg-white">
-      <div class="px-4 py-4 flex flex-col gap-3">
-        <a href="#home" class="py-2 rounded px-2 hover:bg-slate-50">Home</a>
-        <a href="#services" class="py-2 rounded px-2 hover:bg-slate-50">Services</a>
-        <a href="#pricing" class="py-2 rounded px-2 hover:bg-slate-50">Pricing</a>
-        <a href="#security" class="py-2 rounded px-2 hover:bg-slate-50">Security</a>
-        <a href="#contact" class="py-2 rounded px-2 hover:bg-slate-50">Contact</a>
+      <!-- Mobile nav (hidden by default; toggled by script.js) -->
+      <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Data Safety</a>
+        <a href="contact.html">Contact</a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="fade-in">
+    <!-- HERO (dark) -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <span class="eyebrow">AI-assisted workforce intelligence</span>
+          <h1 class="hero-title">Optimize staffing, reduce overtime, and protect your workforce — with trusted forecasting</h1>
+          <p class="hero-lead">Forecast demand (30 / 90 / 180 days), detect overtime drivers, and receive prioritized, actionable recommendations that show estimated savings and implementation difficulty. Works across healthcare, retail, logistics, public safety, and more.</p>
 
-    <!-- Hero -->
-    <section id="home" class="relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-28">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p class="inline-flex items-center gap-2 text-sm font-semibold bg-gradient-to-r from-teal-100 to-white text-[var(--teal)] px-3 py-1 rounded-full">
-              Actionable staffing analytics
-            </p>
-
-            <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight text-[var(--navy)]">
-              Optimize staffing, reduce overtime, and protect your workforce — across any industry
-            </h1>
-
-            <p class="mt-6 text-lg text-slate-600 max-w-xl">
-              AI-assisted staffing analysis and prioritized recommendations with clear ROI estimates — for healthcare, retail, public safety, logistics, and more.
-            </p>
-
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" class="inline-flex items-center gap-3 bg-[var(--teal)] text-white px-5 py-3 rounded-lg font-semibold shadow hover:opacity-95">Get a free analysis</a>
-              <a href="#services" class="inline-flex items-center gap-2 border border-slate-200 px-5 py-3 rounded-lg text-slate-700 hover:bg-slate-50">How it works</a>
-            </div>
-
-            <!-- key stats -->
-            <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-2xl font-bold text-[var(--navy)]">20–40%</div>
-                <div class="text-sm text-slate-500">Typical OT reduction</div>
-              </div>
-              <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-2xl font-bold text-[var(--navy)]"><span id="c">0</span>+</div>
-                <div class="text-sm text-slate-500">Employees analyzed</div>
-              </div>
-              <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-2xl font-bold text-[var(--navy)]"><span id="r">0</span></div>
-                <div class="text-sm text-slate-500">Industries served</div>
-              </div>
-              <div class="bg-white p-4 rounded-lg shadow-sm">
-                <div class="text-2xl font-bold text-[var(--navy)]">Secure</div>
-                <div class="text-sm text-slate-500">No PII accepted</div>
-              </div>
-            </div>
+          <div class="hero-ctas">
+            <a href="contact.html" class="btn btn-primary">Get a free analysis</a>
+            <a href="services.html" class="btn btn-outline">Explore services</a>
           </div>
 
-          <!-- visual card -->
-          <div>
-            <div class="rounded-2xl bg-gradient-to-br from-white to-slate-50 p-6 shadow-xl border border-slate-100">
-              <div class="flex items-center justify-between">
-                <div>
-                  <div class="text-sm font-semibold text-[var(--muted)]">Free staffing analysis</div>
-                  <div class="text-lg font-bold text-[var(--navy)]">One-page action plan</div>
-                </div>
-                <div class="text-xs text-slate-400">30 min</div>
-              </div>
-
-              <div class="mt-4">
-                <svg viewBox="0 0 300 180" class="w-full h-48 object-cover rounded-lg" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                  <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0fa3a3"/><stop offset="1" stop-color="#0b2545"/></linearGradient></defs>
-                  <rect width="300" height="180" rx="12" fill="#f6fbfd"/>
-                  <path d="M24 140 L70 85 L120 100 L170 55 L220 80 L276 40" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-
-              <ul class="mt-4 space-y-2 text-sm text-slate-600">
-                <li>Prioritized fixes you can implement this week</li>
-                <li>Estimated overtime savings and impact</li>
-                <li>Implementation difficulty & owner recommendations</li>
-              </ul>
-
-              <div class="mt-5 flex gap-3">
-                <a href="#contact" class="px-4 py-2 bg-[var(--teal)] text-white rounded-lg font-semibold">Request free analysis</a>
-                <a href="#pricing" class="px-4 py-2 border rounded-lg">See pricing</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-3xl font-extrabold text-[var(--navy)] mb-6">What we do</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="font-semibold text-lg">AI-Assisted Staffing Analysis</h3>
-          <p class="mt-2 text-slate-600">Automated detection of overtime drivers, consecutive shift risk, and workload imbalance.</p>
-        </article>
-
-        <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="font-semibold text-lg">Forecasting & Coverage Planning</h3>
-          <p class="mt-2 text-slate-600">Demand forecasting to reduce reliance on costly agency/OT hours.</p>
-        </article>
-
-        <article class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="font-semibold text-lg">Custom Dashboards</h3>
-          <p class="mt-2 text-slate-600">Tailored dashboards and scheduled reports for leadership and scheduling teams.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="bg-slate-50 py-12">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="rounded-2xl bg-white p-8 shadow">
-          <h3 class="text-2xl font-bold">Pricing & Engagements</h3>
-          <p class="mt-3 text-slate-600">Custom pricing is based on organization size, number of employees analyzed, and frequency of reports. We offer:</p>
-          <ul class="mt-4 list-disc list-inside text-slate-600">
-            <li>Pilot — single analysis & action plan</li>
-            <li>Monthly — recurring reporting + dashboard</li>
-            <li>Enterprise — dedicated integration & SLA</li>
+          <ul class="stats">
+            <li><strong>20–40%</strong><span>Typical OT reduction</span></li>
+            <li><strong>320+</strong><span>Employees analyzed (sample)</span></li>
+            <li><strong>12</strong><span>Industries served</span></li>
+            <li><strong>Secure</strong><span>No PII accepted</span></li>
           </ul>
-          <p class="mt-4 text-sm text-slate-500">We’ll provide a clear estimate after a short consultation.</p>
+        </div>
+
+        <div class="hero-right">
+          <div class="card visual-card">
+            <div class="card-head">
+              <div>
+                <div class="small-muted">Free staffing analysis</div>
+                <div class="card-title">One-page action plan</div>
+              </div>
+              <div class="time-tag">30 min</div>
+            </div>
+
+            <div class="chart-visual" aria-hidden="true">
+              <!-- simple procedural SVG line chart for style -->
+              <svg viewBox="0 0 320 160" class="svg-chart" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="gradA" x1="0" x2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
+                </defs>
+                <rect width="320" height="160" rx="12" fill="#f6f8ff" />
+                <path d="M24 120 L68 80 L112 100 L156 70 L200 90 L256 50" fill="none" stroke="url(#gradA)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+
+            <ul class="card-list">
+              <li>Prioritized fixes to implement quickly</li>
+              <li>Estimated overtime savings & difficulty</li>
+              <li>Assigned owner & next steps</li>
+            </ul>
+
+            <div class="card-actions">
+              <a href="contact.html" class="btn btn-primary">Request free analysis</a>
+              <a href="pricing.html" class="btn btn-ghost">See pricing</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Security -->
-    <section id="security" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-2xl font-extrabold text-[var(--navy)] mb-4">Data Safety & Privacy</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-xl p-6 shadow">
-          <h4 class="font-semibold">No PII Policy</h4>
-          <p class="mt-2 text-slate-600">We do <strong>NOT</strong> accept or process any Personally Identifiable Information (PII). All data submitted must be anonymized prior to upload. We never request names, social security numbers, medical records, or other personal identifiers.</p>
+    <!-- FEATURE SECTIONS (light area starts) -->
+    <section class="panel features">
+      <div class="container">
+        <div class="intro">
+          <h2>Why StaffSmart</h2>
+          <p>We focus on operational fixes that preserve quality of care and work while lowering unnecessary labor spend. Recommendations are prioritized by impact, difficulty, and estimated ROI.</p>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow">
-          <h4 class="font-semibold">Transmission & Storage</h4>
-          <p class="mt-2 text-slate-600">Form submissions are sent securely to Formspree (HTTPS). We minimize data retention — only business contact details are used to follow up.</p>
+
+        <div class="cards-grid">
+          <article class="feature card-lg">
+            <h3>Overtime Optimization</h3>
+            <p>Reveal the scheduling rules, shift patterns, and handoff failures that create overtime. We provide targeted fixes — schedule rules, staffing adjustments, and process changes — with estimated savings.</p>
+          </article>
+
+          <article class="feature card-lg">
+            <h3>Burnout Prevention</h3>
+            <p>Measure consecutive shifts, recovery windows, and workload imbalance. Receive risk heatmaps and scheduling alternatives to reduce fatigue and turnover risk.</p>
+          </article>
+
+          <article class="feature card-lg">
+            <h3>Forecasting (30 / 90 / 180 days)</h3>
+            <p>Tactical and strategic forecasts that help you reduce agency use, plan hiring, and align training windows with demand. All forecasts include confidence ranges and operational guidance.</p>
+          </article>
+        </div>
+
+        <div class="cta-block">
+          <p class="muted small">Interested in a sample result? Our standard engagement provides a pilot report with a one-page action plan and sample savings estimate.</p>
+          <a href="contact.html" class="btn btn-primary">Request pilot</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-      <h2 class="text-2xl font-extrabold text-[var(--navy)] mb-6">Request a Free Analysis</h2>
-
-      <div class="bg-white shadow rounded-xl p-6">
-        <form id="leadForm" action="https://formspree.io/f/xvgeqdyv" method="POST" class="grid gap-4">
-          <!-- redirect to thank-you -->
-          <input type="hidden" name="_next" value="https://staffsmartanalytics.com/thank-you.html">
-          <input type="hidden" name="_subject" value="New inquiry — StaffSmart Analytics">
-
-          <!-- Honeypot field (hidden from users) -->
-          <div style="display:none !important; visibility:hidden;">
-            <label>Leave this empty</label>
-            <input name="website" type="text" tabindex="-1" autocomplete="off">
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="brand-compact">
+            <img src="logo.png" alt="StaffSmart Analytics logo" class="footer-logo" />
+            <div class="brand-meta">
+              <div class="brand-name">StaffSmart Analytics</div>
+              <div class="brand-sub muted">Workforce optimization & forecasting</div>
+            </div>
           </div>
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <label class="block">
-              <span class="text-sm font-semibold">Organization</span>
-              <input name="company" type="text" required class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-3 focus-ring" placeholder="Acme Logistics">
-            </label>
-
-            <label class="block">
-              <span class="text-sm font-semibold">Contact email</span>
-              <input name="email" type="email" required class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-3 focus-ring" placeholder="you@company.com">
-            </label>
-          </div>
-
-          <label class="block">
-            <span class="text-sm font-semibold">Phone (optional)</span>
-            <input name="phone" type="tel" class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-3 focus-ring" placeholder="(555) 555-5555">
-          </label>
-
-          <label class="block">
-            <span class="text-sm font-semibold">Brief description (what you'd like analyzed)</span>
-            <textarea name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-200 shadow-sm p-3 focus-ring" placeholder="Shift schedules, number of staff, reporting frequency..."></textarea>
-          </label>
-
-          <label class="flex items-start gap-3 text-sm">
-            <input name="no_pii_confirm" type="checkbox" required class="mt-1" />
-            <span>I confirm I will not submit PII (names, SSNs, health or protected data).</span>
-          </label>
-
-          <div class="flex gap-3 mt-2">
-            <button type="submit" class="px-5 py-3 bg-[var(--teal)] text-white rounded-lg font-semibold">Request analysis</button>
-            <a href="mailto:info@staffsmartanalytics.com" class="px-5 py-3 border rounded-lg">Email us</a>
-          </div>
-
-          <p class="mt-3 text-sm text-slate-500">Pricing and scope will be discussed after a short consultation. We do not accept PII.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[var(--navy)] text-white mt-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>
-          <div class="font-semibold">StaffSmart Analytics</div>
-          <div class="text-sm opacity-80">© <span id="year"></span> — All rights reserved</div>
         </div>
 
-        <div class="text-sm opacity-80 text-right">
-          <div>Security features: CSP meta, X-Frame-Options, referrer policy.</div>
-          <div class="mt-1">For security contact: info@staffsmartanalytics.com</div>
+        <div class="footer-right">
+          <div class="links">
+            <a href="services.html">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="security.html">Data Safety</a>
+            <a href="privacy.html">Privacy</a>
+          </div>
+          <div class="copyright muted">© <span id="yrHome"></span> StaffSmart Analytics</div>
         </div>
       </div>
     </footer>
 
-  </main>
-
-  <script>
-    // mobile menu
-    const menuBtn = document.getElementById('menuBtn'), mobilePanel = document.getElementById('mobilePanel');
-    menuBtn && menuBtn.addEventListener('click', ()=> mobilePanel.classList.toggle('hidden'));
-
-    // small stats animation
-    function animateCount(id, end, duration=900) {
-      const el = document.getElementById(id); if(!el) return;
-      let start = 0, step = Math.ceil(end / (duration/20));
-      const t = setInterval(()=> { start += step; if(start>=end){ el.textContent = end; clearInterval(t);} else el.textContent = start }, 20);
-    }
-    animateCount('c', 320);
-    animateCount('r', 12);
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // honeypot: remove value if filled to avoid sending spam through forms
-    document.getElementById('leadForm')?.addEventListener('submit', function(e){
-      const honeypot = this.querySelector('input[name="website"]');
-      if(honeypot && honeypot.value){ e.preventDefault(); return false; }
-    });
-  </script>
+  </div><!-- .site -->
 
 </body>
 </html>
