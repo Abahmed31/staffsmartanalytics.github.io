@@ -187,3 +187,16 @@ body.dark-mode footer{background:transparent}
   .checkbox-row{flex-direction:row}
   .mobile-nav{display:none} /* toggled by JS */
 }
+@media (max-width: 768px) {
+  .quick-resources {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    position: relative;
+    z-index: 2;
+  }
+}
