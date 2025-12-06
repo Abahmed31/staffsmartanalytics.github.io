@@ -25,32 +25,29 @@ body {
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-/* NAVBAR LINK COLORS — ALWAYS CYAN + PURPLE OUTLINE */
-.nav-links a {
-  color: #7dfcff !important;        /* cyan (same as hover before) */
+/* NAVBAR LINK COLORS — CYAN + PURPLE OUTLINE */
+.nav-links {
+  color: #7dfcff !important;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
 
   padding: 6px 12px;
-  border: 2px solid #9d4bff;        /* same purple as your buttons */
+  border: 2px solid #9d4bff;
   border-radius: 8px;
+
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-.nav-links a:hover {
-  background: rgba(157, 75, 255, 0.2);  /* subtle purple hover glow */
+.nav-links:hover {
+  background: rgba(157, 75, 255, 0.25);
   color: #7dfcff !important;
-  border-color: #9d4bff;
 }
 
-
-.nav-links a:hover {
-  color: #9d7dff !important;
-}
-
+/* CONTACT BUTTON */
 .contact-btn {
   background: #9d4bff;
   color: white !important;
@@ -64,7 +61,7 @@ body {
   background: #7a33db;
 }
 
-/* HERO & PAGE SECTIONS */
+/* SECTIONS */
 section {
   padding: 60px 40px;
 }
@@ -74,7 +71,7 @@ h1, h2 {
   font-weight: 700;
 }
 
-/* CONTACT FORM */
+/* FORM */
 form {
   max-width: 600px;
   margin-top: 30px;
@@ -95,21 +92,21 @@ textarea {
 /* CHECKBOX FIX */
 .checkbox-row {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 12px;
   margin-top: 14px;
   max-width: 600px;
 }
 
 .checkbox-row input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
 }
 
 .checkbox-row label {
   font-size: 15px;
   line-height: 1.4;
-  flex: 1;
   color: #1a1a1a;
 }
 
@@ -125,10 +122,5 @@ textarea {
 
   .checkbox-row {
     flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .checkbox-row label {
-    max-width: 85%;
   }
 }
