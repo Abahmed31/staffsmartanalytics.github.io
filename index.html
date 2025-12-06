@@ -1,97 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Staff Smart Analytics — Workforce Optimization</title>
-<meta name="description" content="Data-driven staffing analytics, forecasting, and workforce optimization solutions." />
-<link rel="stylesheet" href="styles.css" />
-<script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Smart Analytics</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand">
-      <img src="logo-new.png" alt="Staff Smart Analytics logo" class="brand-logo" />
-      <div class="brand-title">
-        <div class="brand-name">StaffSmart</div>
-        <div class="brand-tag">Analytics</div>
-      </div>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="navbar-left">
+        <img src="logo-new.png" alt="Logo" style="height:44px;">
+        <span style="color:white;font-size:18px;font-weight:600;">StaffSmart<br><span style="font-size:14px;font-weight:400;">Analytics</span></span>
     </div>
 
-    <nav class="primary-nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="about.html">Why Us</a>
-      <a href="services.html">Solutions</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="security.html">Data Safety</a>
-      <a href="contact.html" class="nav-cta">Contact</a>
-    </nav>
-
-    <button id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
-  </div>
-
-  <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none">
-    <a href="index.html">Home</a>
-    <a href="about.html">Why Us</a>
-    <a href="services.html">Solutions</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="security.html">Data Safety</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
-
-<main>
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Workforce Optimization</span>
-        <h1 class="hero-title">Smarter staffing decisions start with better data</h1>
-        <p class="hero-lead">We transform scheduling and shift information into prioritized actions that reduce overtime, prevent burnout, and improve predictability.</p>
-        <div style="margin-top:22px;display:flex;gap:12px">
-          <a href="contact.html" class="btn btn-primary">Request free analysis</a>
-          <a href="services.html" class="btn btn-outline">View solutions</a>
-        </div>
-      </div>
-
-      <div>
-        <img src="logo-new.png" alt="StaffSmart logo" class="hero-logo" />
-      </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">Why Us</a>
+        <a href="services.html">Solutions</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="security.html">Data Safety</a>
+        <a href="contact.html" class="contact-btn">Contact</a>
     </div>
-  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding:80px 40px;max-width:1100px;margin:auto;">
+    <h1>Better Staffing Decisions Powered by Data</h1>
+    <p style="margin-top:10px;color:#555;max-width:700px;">
+        Reduce overtime, detect burnout, improve coverage, forecast staffing needs,
+        and support staff wellbeing using modern analytics built for healthcare teams.
+    </p>
+
+    <a href="contact.html" class="contact-btn" style="margin-top:22px;display:inline-block;">
+        Request a Pilot
+    </a>
 </section>
 
-<section class="panel">
-  <div class="container">
-    <h2>What we deliver</h2>
-    <div class="cards-grid">
-      <div class="feature"><h3>Forecasting</h3><p class="muted">30/90/180-day workload forecasts to inform resource planning.</p></div>
-      <div class="feature"><h3>Overtime Reduction</h3><p class="muted">Identify preventable overtime and prioritized fixes.</p></div>
-      <div class="feature"><h3>Burnout Prevention</h3><p class="muted">Identify risky schedules and workload imbalances before they impact staff well-being.</p></div>
-    </div>
-
-    <div class="cta-block" style="margin-top:20px">
-      <p class="muted">Custom reporting packages based on size and frequency. Request a tailored quote.</p>
-      <a class="btn btn-primary" href="contact.html">Get started</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <div style="display:flex;align-items:center;gap:12px">
-      <img src="logo-new.png" class="footer-logo" alt="StaffSmart logo" />
-      <div style="font-weight:700;color:#e5dbff">StaffSmart Analytics</div>
-    </div>
-    <div style="color:#cfd6e6">© <span id="yrHome"></span></div>
-  </div>
-</footer>
-
-<script>document.getElementById('yrHome').textContent=new Date().getFullYear();</script>
 </body>
 </html>
