@@ -1,38 +1,64 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Why Us — StaffSmart Analytics</title>
-<link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script>
-</head><body>
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand"><img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag">Analytics</div></div></div>
-    <nav class="primary-nav"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html" class="nav-cta">Contact</a></nav>
-    <button id="navToggle" class="nav-toggle" aria-label="Open menu"><span class="hamburger"></span></button>
-  </div>
-  <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none">
-    <a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Why Us — StaffSmart Analytics</title>
+  <link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script>
+</head>
+<body>
+
+<header class="navbar" role="banner">
+  <div class="navbar-inner">
+    <div class="brand-left">
+      <img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag muted">Analytics</div></div>
+    </div>
+
+    <nav class="nav-links" role="navigation" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">Why Us</a>
+      <a href="services.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Data Safety</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <button id="themeToggle" class="theme-toggle" aria-pressed="false"><span class="icon"></span></button>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-label="Open menu"><span class="hamburger"></span></button>
+    </div>
   </div>
 </header>
 
-<main style="padding-top:110px">
-  <section class="container">
-    <h1>Why organizations trust us</h1>
-    <p class="muted">We deliver measurable operational improvements with minimal data requirements and strong security controls.</p>
+<div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none">
+  <a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a>
+</div>
 
-    <div class="cards-grid" style="margin-top:18px">
-      <div class="feature"><h3>Precision Analytics</h3><p class="muted">Root-cause focus and prioritized actions that can be implemented quickly.</p></div>
-      <div class="feature"><h3>Industry-Agnostic</h3><p class="muted">Works across healthcare, retail, logistics, public safety, and more.</p></div>
-      <div class="feature"><h3>Actionable Guidance</h3><p class="muted">Clear next steps with owners and timelines — not just observations.</p></div>
-      <div class="feature"><h3>Low Lift</h3><p class="muted">Minimal, anonymized data required — no PII.</p></div>
-      <div class="feature"><h3>Security-First</h3><p class="muted">Encrypted transfers, retention & deletion policies, controlled access.</p></div>
-      <div class="feature"><h3>Future Roadmap</h3><p class="muted">We can extend to delivery automation as requested.</p></div>
+<main>
+  <section class="panel" style="padding-top:24px">
+    <div class="container">
+      <h1>Why organizations trust us</h1>
+      <p class="muted">We deliver measurable operational improvements with minimal data requirements and strong security controls.</p>
+
+      <div class="cards-grid" style="margin-top:18px">
+        <div class="card"><h3>Precision Analytics</h3><p class="muted">Root-cause focus and prioritized actions that can be implemented quickly.</p></div>
+        <div class="card"><h3>Industry-Agnostic</h3><p class="muted">Works across healthcare, retail, logistics, public safety, and more.</p></div>
+        <div class="card"><h3>Actionable Guidance</h3><p class="muted">Clear next steps with owners and timelines — not just observations.</p></div>
+        <div class="card"><h3>Low Lift</h3><p class="muted">Minimal, anonymized data required — no PII.</p></div>
+        <div class="card"><h3>Security-First</h3><p class="muted">Encrypted transfers, retention & deletion policies, controlled access.</p></div>
+        <div class="card"><h3>Future Roadmap</h3><p class="muted">We can extend to delivery automation as requested.</p></div>
+      </div>
+
+      <div style="text-align:center;margin-top:20px"><a href="contact.html" class="nav-cta btn btn-primary">Start with a free analysis</a></div>
     </div>
-
-    <div style="text-align:center;margin-top:20px"><a href="contact.html" class="btn btn-primary">Start with a free analysis</a></div>
   </section>
 </main>
 
-<footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700;color:#e5dbff">StaffSmart Analytics</div></div><div style="color:#cfd6e6">© <span id="yrA"></span></div></div></footer>
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700;color:var(--accent-purple)">StaffSmart Analytics</div></div>
+    <div style="color:var(--muted)">© <span id="yrA"></span></div>
+  </div>
+</footer>
+
 <script>document.getElementById('yrA').textContent=new Date().getFullYear();</script>
-</body></html>
+</body>
+</html>
