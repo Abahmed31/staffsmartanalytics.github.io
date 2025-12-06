@@ -1,42 +1,48 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Contact — StaffSmart Analytics</title><link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script></head><body>
-<header class="site-header"><div class="header-inner"><div class="brand"><img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag">Analytics</div></div></div><nav class="primary-nav"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html" class="nav-cta">Contact</a></nav><button id="navToggle" class="nav-toggle" aria-label="Open menu"><span class="hamburger"></span></button></div>
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Contact — Staff Smart Analytics</title><meta name="description" content="Contact Staff Smart Analytics for a free staffing analysis. Do not submit PII." /><link rel="stylesheet" href="styles.css" /><script defer src="script.js"></script></head><body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand"><img src="logo-new.png" alt="Staff Smart Analytics logo" class="brand-logo" /><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag">Analytics</div></div></div>
+    <nav class="primary-nav"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html" class="nav-cta">Contact</a></nav>
+    <button id="navToggle" class="nav-toggle"><span class="hamburger"></span></button>
+  </div>
   <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a></div>
 </header>
 
 <main style="padding-top:110px">
-<section class="container">
-  <h1>Contact & Request a Free Analysis</h1>
-  <p class="muted">Fill the secure form below. Do not submit names, SSNs, medical or other PII.</p>
+  <section class="container">
+    <h1>Contact & Request a Free Analysis</h1>
+    <p class="muted">Fill the secure form below. Do not submit names, SSNs, medical or other PII.</p>
 
-  <div class="contact-grid" style="margin-top:12px">
-    <div class="card form-card">
-      <form id="leadForm" action="https://formspree.io/f/xvgeqdyv" method="POST" autocomplete="on">
-        <input type="hidden" name="_next" value="https://staffsmartanalytics.com/thank-you.html" />
-        <input type="hidden" name="_subject" value="New inquiry — StaffSmart Analytics" />
-        <div style="display:none;visibility:hidden"><label>Leave blank</label><input name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+    <div class="contact-grid" style="margin-top:12px">
+      <div class="card form-card">
+        <form id="leadForm" action="https://formspree.io/f/xvgeqdyv" method="POST" autocomplete="on">
+          <input type="hidden" name="_next" value="https://staffsmartanalytics.com/thank-you.html" />
+          <input type="hidden" name="_subject" value="New inquiry — StaffSmart Analytics" />
+          <div style="display:none;visibility:hidden"><label>Leave blank</label><input name="website" type="text" tabindex="-1" autocomplete="off" /></div>
 
-        <label for="company">Organization</label><input id="company" name="company" required placeholder="Your organization" maxlength="100" />
-        <label for="contactname">Contact name</label><input id="contactname" name="contactname" required placeholder="Full name" maxlength="80" />
-        <label for="email">Business email</label><input id="email" name="email" type="email" required placeholder="you@company.com" maxlength="100" />
-        <label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" maxlength="30" />
-        <label for="message">Brief description</label><textarea id="message" name="message" maxlength="2000" placeholder="Shift schedules, staff counts, reporting needs..."></textarea>
+          <label for="company">Organization</label><input id="company" name="company" required placeholder="Your organization" maxlength="100" />
+          <label for="contactname">Contact name</label><input id="contactname" name="contactname" required placeholder="Full name" maxlength="80" />
+          <label for="email">Business email</label><input id="email" name="email" type="email" required placeholder="you@company.com" maxlength="100" />
+          <label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" maxlength="30" />
+          <label for="message">Brief description</label><textarea id="message" name="message" maxlength="2000" placeholder="Shift schedules, staff counts, reporting needs..."></textarea>
 
-        <label class="checkbox-row"><input id="no_pii_confirm" name="no_pii_confirm" type="checkbox" required /><span>I confirm I will not submit PII (names, SSNs, DOB, medical data).</span></label>
+          <label class="checkbox-row"><input id="no_pii_confirm" name="no_pii_confirm" type="checkbox" required /><span>I confirm I will not submit PII (names, SSNs, DOB, medical data).</span></label>
 
-        <div style="display:flex;gap:10px;margin-top:12px"><button class="btn btn-primary" type="submit">Submit inquiry</button><a class="btn btn-outline" href="mailto:info@staffsmartanalytics.com">Email us</a></div>
+          <div style="display:flex;gap:10px;margin-top:12px"><button class="btn btn-primary" type="submit">Submit inquiry</button><a class="btn btn-outline" href="mailto:info@staffsmartanalytics.com">Email us</a></div>
 
-        <p class="muted small" style="margin-top:8px">Form submissions are transmitted via Formspree (HTTPS). We retain only business contact details needed to respond.</p>
-      </form>
+          <p class="muted small" style="margin-top:8px">Form submissions are transmitted via Formspree (HTTPS). We retain only business contact details needed to respond.</p>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h3>Quick resources</h3>
+        <p class="muted">Request a demo, sample report, or discuss integrations when you submit the form.</p>
+        <p class="muted"><strong>Email:</strong> <a href="mailto:info@staffsmartanalytics.com">info@staffsmartanalytics.com</a></p>
+      </aside>
     </div>
-
-    <aside class="card">
-      <h3>Quick resources</h3>
-      <p class="muted">Request a demo, sample report, or discuss integrations when you submit the form.</p>
-      <p class="muted"><strong>Email:</strong> <a href="mailto:info@staffsmartanalytics.com">info@staffsmartanalytics.com</a></p>
-    </aside>
-  </div>
-</section>
+  </section>
 </main>
 
 <footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700;color:#e5dbff">StaffSmart Analytics</div></div><div style="color:#cfd6e6">© <span id="yrContact2"></span></div></div></footer>
