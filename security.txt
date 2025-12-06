@@ -1,0 +1,5 @@
+Contact: mailto:info@staffsmartanalytics.com
+Encryption: https://example.com/pgp-key.txt
+Acknowledgements: https://staffsmartanalytics.com/security/acknowledgements
+Preferred-Languages: en
+Policy: https://staffsmartanalytics.com/privacy
