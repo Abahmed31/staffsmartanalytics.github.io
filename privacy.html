@@ -1,28 +1,37 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Privacy — StaffSmart Analytics</title><link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script></head><body>
-<header class="navbar"><div class="navbar-inner"><div class="brand-left"><img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag muted">Analytics</div></div></div><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html" class="active">Data Safety</a><a href="contact.html" class="nav-cta">Contact</a></nav><div style="display:flex;align-items:center;gap:10px"><button id="themeToggle" class="theme-toggle" aria-pressed="false"><span class="icon"></span></button><button id="navToggle" class="nav-toggle" aria-expanded="false"><span class="hamburger"></span></button></div></div></header>
-
-<div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a></div>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Privacy — StaffSmart Analytics</title>
+  <meta name="description" content="Privacy policy — minimal, business contact data and anonymized operational data only. Do not submit PII."/>
+  <link rel="stylesheet" href="styles.css"/><script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner"><div class="brand"><img src="logo-new.png" class="brand-logo" alt="logo"/><div class="brand-title"><div class="brand-name">StaffSmart</div><div class="brand-tag">Analytics</div></div></div>
+    <nav class="primary-nav"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html" class="active">Data Safety</a><a href="contact.html" class="nav-cta">Contact</a></nav>
+    <button class="nav-toggle">☰</button>
+  </div>
+  <div class="mobile-nav" style="display:none"><a href="index.html">Home</a><a href="about.html">Why Us</a><a href="services.html">Solutions</a><a href="pricing.html">Pricing</a><a href="security.html">Data Safety</a><a href="contact.html">Contact</a></div>
+</header>
 
 <main>
-  <section class="panel" style="padding-top:24px">
-    <div class="container">
-      <h1>Privacy Policy</h1>
-      <p class="muted">We collect minimal, non-sensitive business contact information and anonymized operational data when provided. Do not submit PII.</p>
+  <section class="container">
+    <h1>Privacy Policy</h1>
+    <p class="muted">We collect minimal, non-sensitive business contact information and anonymized operational data when provided. Do not submit PII.</p>
 
-      <h3>Data we collect</h3>
-      <ul class="muted">
-        <li>Business contact information submitted voluntarily</li>
-        <li>Anonymized scheduling data (no PII)</li>
-        <li>Standard website analytics</li>
-      </ul>
+    <h3>Data we collect</h3>
+    <ul class="muted" style="margin-top:12px">
+      <li>Business contact information submitted voluntarily</li>
+      <li>Anonymized scheduling data (no PII)</li>
+      <li>Standard website analytics</li>
+    </ul>
 
-      <h3>Contact</h3>
-      <p class="muted">Questions: <a href="mailto:info@staffsmartanalytics.com">info@staffsmartanalytics.com</a></p>
-    </div>
+    <h3 style="margin-top:16px">Contact</h3>
+    <p class="muted">Questions: <a href="mailto:info@staffsmartanalytics.com">info@staffsmartanalytics.com</a></p>
   </section>
 </main>
 
-<footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700;color:var(--accent-purple)">StaffSmart Analytics</div></div><div style="color:var(--muted)">© <span id="yrPr"></span></div></div></footer>
-<script>document.getElementById('yrPr').textContent=new Date().getFullYear();</script>
-</body></html>
+<footer><div class="footer-inner"><div style="display:flex;align-items:center;gap:12px"><img src="logo-new.png" class="footer-logo" alt="logo"/><div style="font-weight:700">StaffSmart Analytics</div></div><div style="color:#6b7280">© <span id="yrPriv"></span></div></div></footer>
+<script>document.getElementById('yrPriv').textContent=new Date().getFullYear();</script>
+</body>
+</html>
